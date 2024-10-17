@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Leaderboard</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Row colors based on stars */
+        .star-1 { background-color: rgb(231, 229, 229); }
+        .star-2 { background-color: lightgreen; }
+        .star-3 { background-color: lightblue; }
+        .star-4 { background-color: purple; color: white; }
+        .star-5 { background-color: orange; color: white; }
+        .star-6 { background-color: red; color: white; }
+        .star-7 { background-color: gold; color: white; }
+
+        .star-icon {
+            color: gold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSD(United) Leaderboard [Codechef]</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Stars</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Current Rating</th>
+                <th>Max Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in classmates %}
+            <tr class="star-{{ student.stars }}">
+                <!-- Rank using loop.index -->
+                <td>{{ loop.index }}</td>
+                <!-- Display stars -->
+                <td>
+                    {% for star in range(student.stars) %}
+                        <span class="star-icon">★</span>
+                    {% endfor %}
+                </td>
+                <td>{{ student.name }}</td>
+                <!-- Make username a clickable hyperlink -->
+                <td><a href="https://www.codechef.com/users/{{ student.username }}" target="_blank">{{ student.username }}</a></td>
+                <td>{{ student.current_rating }}</td>
+                <td>{{ student.max_rating }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

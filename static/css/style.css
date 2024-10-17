@@ -1,0 +1,64 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+thead {
+    background-color: #0073e6;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Row colors based on stars */
+.stars-2 {
+    background-color: #ffebcc;
+}
+.stars-3 {
+    background-color: #ffd27f;
+}
+.stars-4 {
+    background-color: #ffb84d;
+}
+.stars-5 {
+    background-color: #ff9933;
+}
+.stars-6 {
+    background-color: #ff751a;
+}
+.stars-7 {
+    background-color: #ff4000;
+}
+
+/* Styling stars */
+i.fa-star {
+    color: gold;
+    margin: 0 2px;
+}
